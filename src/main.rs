@@ -4,11 +4,10 @@ fn main() {
     let mut post = Post::new();
 
     post.add_text("test text");
-    assert_eq!("", post.content());
+    
+    let post = post.request_review();
 
-    post.request_review();
-    assert_eq!("", post.content());
+    let post = post.approve();
 
-    post.approve();
     assert_eq!("test text", post.content());
 }
